@@ -1,0 +1,70 @@
+@import "global_vars";
+body, p {
+  font-family: 'Roboto', sans-serif;
+  /*letter-spacing: 1px;*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: $default-text-color;
+  letter-spacing: 0.4px;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 30px;
+  color: $default-text-color;
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+}
+
+h3 {
+  font-size: 18px;
+  font-style: italic;
+  margin: 0;
+}
+
+h4 {
+  font-size: 16px;
+  margin: 0;
+}
+
+h5 {
+  font-size: 14px;
+  margin: 0;
+}
+
+h6 {
+  font-size: 12px;
+  margin: 0;
+}
+
+p {
+  line-height: 1.4;
+}
+
+
+a {
+  color: $default-text-color;
+  text-decoration:none;
+  outline: 0 !important;
+  border: 0;
+}
+
+a:hover {
+  color: $default-text-color;
+  text-decoration: none;
+  border: 0;
+  color: $neon-blue !important;
+}

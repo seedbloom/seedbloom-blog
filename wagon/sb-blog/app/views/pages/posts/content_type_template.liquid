@@ -1,0 +1,81 @@
+---
+title: Post Template
+listed: false
+published: true
+content_type: posts
+---
+{% extends layouts/simple %}
+
+{% block 'content/banner' %}
+<header class="main-header post-head {% if post.featured_image.url %}" style="background-image: url({{ post.featured_image.url | resize: '1920x1200' }});background-position: center center;background-repeat: no-repeat;background-size: cover; {% else %}} no-cover {% endif %}">
+  <div class="overlay"></div>
+  <section class="description">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <section class="post-meta">
+            {% for tag in post.tags %}
+              <a href="{{ locale }}/tags/{{ tag | first | escape | downcase }}">{{ tag | escape }}</a>
+            {% endfor %}
+            <h1 class="post-title">{{ post.title}}</h1>
+          </section>
+          {{#author}}
+            {{#if image}}
+              <section class="author">
+                <figure class="author-image">
+                  <a href="{{ locale }}/authors/{{ post.author.slug }}"><img class="img-responsive" src="{{ post.author.gravatar | resize: '58x75' }}"/></a>
+                </figure>
+                <section class="name-date">
+                  <span class="name">{{post.author.name}}</span><br/>
+                  <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{post.date
+                      format="DD MMMM YYYY"}}</time>
+                </section>
+              </section>
+            {{/if}}
+          {{/author}}
+          <hr />
+          <div class="share-buttons">
+            <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?url={{url}}&text={{text}}"></a>
+            <a class="fa fa-envelope-o" href="https://twitter.com/intent/tweet?url={{url}}&text={{text}}"></a>
+            <a class="fa fa-copy" href="https://twitter.com/intent/tweet?url={{url}}&text={{text}}"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+{% endblock %}
+
+{% block 'content/main' %}
+    <main class="content" role="main">
+        <article class="post">
+          <section class="post-content">
+            {{ post.body}}
+          </section>
+          <footer class="post-footer hide">
+            {{! Everything inside the #author tags pulls data from the author }}
+            {{#author}}
+              {{#if image}}
+                <figure class="author-image">
+                  <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                </figure>
+              {{/if}}
+
+              <section class="author">
+                <h4><a href="{{url}}">{{name}}</a></h4>
+
+                {{#if bio}}
+                  <p>{{bio}}</p>
+                {{else}}
+                  <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                {{/if}}
+                <div class="author-meta">
+                  {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                  {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                </div>
+              </section>
+            {{/author}}
+          </footer>
+        </article>
+      </main>
+{% endblock %}

@@ -1,0 +1,88 @@
+# Human readable name of this type
+name: Authors
+
+# Lowercase, underscored handle used to access this type
+slug: authors
+
+# Explanatory text displayed in the back-office
+description: Authors
+
+# Slug of field used to identify entries by default, such as the title
+label_field_name: name
+
+# Valid values: manually, created_at, updated_at, or the slug of any field
+order_by: name
+
+# Valid values: asc (ascending) and desc (descending). Set to asc by default.
+order_direction: desc
+
+# Specify a field slug to group entries by that field in the back-office.
+# group_by: <your field>
+
+# Activate public 'create' API (e.g for a contact form)
+# public_submission_enabled: false
+
+# Array of emails to be notified of new entries made with the public API
+# public_submission_accounts: ['john@example.com']
+
+# A list describing each field
+fields:
+
+- name: # The lowercase, underscored name of the field
+    label: Name # Human readable name of the field
+    type: string
+    required: true
+    localized: false
+
+- location: # The lowercase, underscored name of the field
+    label: Location # Human readable name of the field
+    type: text
+    required: true
+    hint: Author residence
+    localized: true
+    text_formatting: text # html (uses rich text editor) or text (uses plain text editor
+
+- site: # The lowercase, underscored name of the field
+    label: Site # Human readable name of the field
+    type: text
+    required: false
+    hint: The full post text
+    localized: false
+    text_formatting: text # html (uses rich text editor) or text (uses plain text editor
+
+- twitter: # The lowercase, underscored name of the field
+    label: Twitter # Human readable name of the field
+    type: text
+    required: false
+    hint: Twitter handle
+    localized: false
+    text_formatting: text # html (uses rich text editor) or text (uses plain text editor
+
+- bio: # The lowercase, underscored name of the field
+    label: Body # Human readable name of the field
+    type: text
+    required: false
+    hint: The full post text
+    localized: true
+    text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+
+- gravatar: # The lowercase, underscored name of the field
+    label: Author image # Human readable name of the field
+    type: file
+    required: true
+    hint: Author image
+    localized: false
+
+- cover: # The lowercase, underscored name of the field
+    label: Author image # Human readable name of the field
+    type: file
+    required: true
+    hint: Image background
+    localized: false
+
+- posts:
+    label: Posts
+    type: has_many
+    class_name: posts
+    inverse_of: author
+    ui_enabled: true

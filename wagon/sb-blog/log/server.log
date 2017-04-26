@@ -1,0 +1,13 @@
+# Logfile created on 2017-04-08 17:33:46 +0200 by logger.rb/47272
+I, [2017-04-08T17:33:46.178048 #14730]  INFO -- : Thin web server (v1.6.3 codename Protein Powder)
+I, [2017-04-08T17:33:46.178149 #14730]  INFO -- : Maximum connections set to 1024
+I, [2017-04-08T17:33:46.178180 #14730]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2017-04-12T11:46:45.037377 #14603]  INFO -- : Thin web server (v1.6.3 codename Protein Powder)
+I, [2017-04-12T11:46:45.037840 #14603]  INFO -- : Maximum connections set to 1024
+I, [2017-04-12T11:46:45.037967 #14603]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2017-04-15T22:54:53.600107 #87604]  INFO -- : Thin web server (v1.6.3 codename Protein Powder)
+I, [2017-04-15T22:54:53.619401 #87604]  INFO -- : Maximum connections set to 1024
+I, [2017-04-15T22:54:53.639358 #87604]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2017-04-26T16:08:04.892122 #14954]  INFO -- : Thin web server (v1.6.3 codename Protein Powder)
+I, [2017-04-26T16:08:04.892829 #14954]  INFO -- : Maximum connections set to 1024
+I, [2017-04-26T16:08:04.892988 #14954]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop

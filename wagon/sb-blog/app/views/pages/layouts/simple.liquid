@@ -1,0 +1,17 @@
+---
+title: Simple
+is_layout: true
+---
+{% extends 'layouts/default' %}
+{% block content %}
+  {% block banner, short_name: true %}
+
+  {% endblock %}
+  <div class="container">
+    <main id="content" class="content" role="main">
+    {% block main, short_name: true %}
+
+    {% endblock %}
+    </main>
+  </div>
+{% endblock %}

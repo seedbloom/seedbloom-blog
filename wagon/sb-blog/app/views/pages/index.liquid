@@ -1,0 +1,26 @@
+---
+title: Home page
+published: true
+handle: home
+---
+{% extends 'layouts/simple' %}
+
+{% block content/banner %}
+<div class="banner-section">
+  <div class="banner">
+    <div class="row">
+      <div class="inner">
+        <div class="lines" style="background-image: url('/images/svg/SBV_BG_white_lines-05.svg');background-position: center center;background-repeat: no-repeat; background-size: cover">
+          <div class="text">
+            <p id="strapline">economics, ethical enterprise, finance and platform co-ops.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content/main %}
+    {% include 'loop' %}
+{% endblock %}
