@@ -15,7 +15,7 @@ content_type: posts
         <div class="col-md-8">
           <section class="post-meta">
             {% for tag in post.tags %}
-              <a href="{{ locale }}/tags/{{ tag | first | escape | downcase }}">{{ tag | escape }}</a>
+              <a href="/{{ locale }}/tags/{{ tag | escape | downcase }}">{{ tag | escape }}</a>
             {% endfor %}
             <h1 class="post-title">{{ post.title}}</h1>
           </section>
@@ -27,8 +27,10 @@ content_type: posts
                 </figure>
                 <section class="name-date">
                   <span class="name">{{post.author.name}}</span><br/>
-                  <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{post.date
-                      format="DD MMMM YYYY"}}</time>
+                  {% if post.contributors %}
+                    <span class="contributors">{{ post.contributors }}</span><br />
+                  {% endif %}
+                  <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{ post.posted_at | localized_date: '%d %B, %Y'}}</time>
                 </section>
               </section>
             {{/if}}

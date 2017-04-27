@@ -33,8 +33,13 @@ fields:
     required: true
     localized: true
 
+- contributors:
+    label: Contributors
+    type: html
+    localised: true
+
 - posted_at: # The lowercase, underscored name of the field
-    label: Posted at # Human readable name of the field
+    label: Posted at # Human readable nam9999900-e of the field
     type: date_time
     required: true
     localized: false
@@ -42,8 +47,7 @@ fields:
 - tags: # The lowercase, underscored name of the field
     label: Tags # Human readable name of the field
     type: tags
-    required: false
-    localized: false
+    required: true
 
 - teaser: # The lowercase, underscored name of the field
     label: Teaser # Human readable name of the field

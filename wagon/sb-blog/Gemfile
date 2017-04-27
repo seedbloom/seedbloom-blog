@@ -21,4 +21,5 @@ group :misc do
   # Add your extra gems here
   # gem 'susy', require: 'susy'
   # gem 'bourbon', require: 'bourbon'
+  gem 'locomotivecms_liquid_extensions', path: 'liquid_extensions', require: true
 end
