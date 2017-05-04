@@ -1,7 +1,7 @@
 @charset "UTF-8";
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap";
 @import "global_vars";
-@import "../bower_components/font-awesome/css/font-awesome.css";
+//@import "../bower_components/font-awesome/css/font-awesome.css";
 $default-delay: 0.333s;
 @import "_reset";
 @import "_animated";

@@ -5,11 +5,23 @@ services:
     volumes:
       - ./:/usr/src/app
     ports:
-      - 3000:3000
+      - 4002:3000
     links:
-      - mongo
-  mongo:
-    container_name: 'mongo'
+      - mongo-sb
+      - seedbloom:seedbloom
+  seedbloom:
+    container_name: seedbloom
+    image: quay.io/vmatekole/seedbloom-alpha:blog-integration
+    links:
+      - mongo-sb:mongo-sb
+    environment:
+      - ROOT_URL=http://localhost:3000
+      - MONGO_URL=mongodb://mongo-sb/seedbloom
+      - PORT=3000
+    ports:
+      - 3000:3000
+  mongo-sb:
+    container_name: 'mongo-sb'
     image: mongo:3.4
     volumes:
       - ./data:/data/db

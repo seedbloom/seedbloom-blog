@@ -12,22 +12,20 @@ is_layout: false
     <title>{{ site.name }}</title>
 
     <link rel="shortcut icon" href="{{ 'favicon.png' | theme_image_url }}">
-     <link rel="stylesheet" type="text/css"
-            href="//fonts.googleapis.com/css?family=Roboto:300,400,500,600"/>
+
+    {{ '//fonts.googleapis.com/css?family=Roboto:300,400,500,600' | stylesheet_tag }}
+    {{ 'http://seedbloom:3000/css/sb-common.css' | stylesheet_tag }}
 
     {{ 'bootstrap.css' | stylesheet_tag }}
     {{ 'application.css' | stylesheet_tag }}
   </head>
   <body>
-    {% include 'nav' %}
-
     {% block content %}
     {% endblock %}
-
-    {% include 'footer' %}
 
     {{ 'jquery.min.js' | javascript_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
     {{ 'application.js' | javascript_tag }}
+    {{ 'http://seedbloom:3000/js/sb-common.js' | javascript_tag }}
   </body>
 </html>

@@ -14,3 +14,9 @@
 #   password: apassword
 #   # api_key: <your api key here>
 #   # ssl: true
+
+http://localhost:4002:
+  host: localhost:4002
+  handle: fluttering-aurora-5898
+  email: victor@matekole.com
+  api_key: d8e213f937d6e0624e3fdb0f32e939a104cc8be5

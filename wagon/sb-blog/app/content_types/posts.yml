@@ -35,7 +35,7 @@ fields:
 
 - contributors:
     label: Contributors
-    type: html
+    type: text
     localised: true
 
 - posted_at: # The lowercase, underscored name of the field

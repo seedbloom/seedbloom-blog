@@ -10,7 +10,7 @@
           <div class="img"
                style="background: url({{ post.featured_image.url | resize: '1920x1200' }});background-position: center center;background-repeat: no-repeat;background-size: cover;">
             <div class="overlay"></div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-9">
               <header class="post-header">
                 <h2 class="post-title"><a href="{{ locale }}/posts/{{ post._slug }}">{{ post.title | escape }}</a></h2>
               </header>
@@ -18,7 +18,7 @@
                 <div class="teaser">{{ post.teaser }}</div> <p>{{ 'read_more' | translate }} <a class="read-more" href="{{url}}">&raquo;</a></p>
               </section>
             </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-3">
               <section class="post-meta">
                 {% if post.tags %}
                   <p class="tags">

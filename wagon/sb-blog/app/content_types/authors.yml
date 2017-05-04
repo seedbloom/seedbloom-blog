@@ -27,7 +27,6 @@ order_direction: desc
 
 # A list describing each field
 fields:
-
 - name: # The lowercase, underscored name of the field
     label: Name # Human readable name of the field
     type: string
@@ -42,24 +41,15 @@ fields:
     localized: true
     text_formatting: text # html (uses rich text editor) or text (uses plain text editor
 
-- site: # The lowercase, underscored name of the field
-    label: Site # Human readable name of the field
-    type: text
-    required: false
-    hint: The full post text
-    localized: false
-    text_formatting: text # html (uses rich text editor) or text (uses plain text editor
-
 - twitter: # The lowercase, underscored name of the field
     label: Twitter # Human readable name of the field
     type: text
     required: false
     hint: Twitter handle
-    localized: false
-    text_formatting: text # html (uses rich text editor) or text (uses plain text editor
+    text_formatting: html # html (uses rich text editor) or text (uses plain text editor
 
 - bio: # The lowercase, underscored name of the field
-    label: Body # Human readable name of the field
+    label: Bio # Human readable name of the field
     type: text
     required: false
     hint: The full post text
@@ -71,18 +61,15 @@ fields:
     type: file
     required: true
     hint: Author image
-    localized: false
 
 - cover: # The lowercase, underscored name of the field
-    label: Author image # Human readable name of the field
+    label: Author cover # Human readable name of the field
     type: file
     required: true
     hint: Image background
-    localized: false
 
 - posts:
-    label: Posts
+    label: Related posts
     type: has_many
     class_name: posts
     inverse_of: author
-    ui_enabled: true
