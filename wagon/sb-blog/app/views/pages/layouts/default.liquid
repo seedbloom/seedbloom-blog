@@ -13,8 +13,9 @@ is_layout: false
 
     <link rel="shortcut icon" href="{{ 'favicon.png' | theme_image_url }}">
 
-    {{ '//fonts.googleapis.com/css?family=Roboto:300,400,500,600' | stylesheet_tag }}
-    {{ 'http://seedbloom:3000/css/sb-common.css' | stylesheet_tag }}
+    {{ 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,600' | stylesheet_tag }}
+    {{ 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,600' | stylesheet_tag }}
+    {% common_include type: 'text/css' %}
 
     {{ 'bootstrap.css' | stylesheet_tag }}
     {{ 'application.css' | stylesheet_tag }}
@@ -26,6 +27,6 @@ is_layout: false
     {{ 'jquery.min.js' | javascript_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
     {{ 'application.js' | javascript_tag }}
-    {{ 'http://seedbloom:3000/js/sb-common.js' | javascript_tag }}
+    {% common_include type: 'text/javascript' %}
   </body>
 </html>

@@ -56,25 +56,21 @@ abbr,acronym {
 }
 /**************************************************************************************/
 a {
-  color: #000;
   text-decoration:none;
-  border-bottom: 1px solid rgba(0,0,0,0);
+  border: 0;
   outline: 0 !important;
   @include transition(border ease-in-out $default-delay);
+  @include transition(color ease-in-out $default-delay);
 }
 
-a:hover,a:focus {
-  color: #000;
+a:hover, a:focus {
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,1);
+  padding-bottom: 6px;
+  @include transition(color ease-in-out $default-delay);
   @include transition(border ease-in-out $default-delay);
 }
 
-p{
+p {
   margin:0;
   background-color: transparent;
 }
@@ -215,10 +211,7 @@ img{
 
 
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ecdf55+0,82c99f+100 */
-.banner-section {background:#ecdf55;} /* Old browsers */
-.banner-section {background:-moz-linear-gradient(top, #ecdf55 0%, #82c99f 100%);} /* FF3.6-15 */
-.banner-section {background:-webkit-linear-gradient(top, #ecdf55 0%,#82c99f 100%);} /* Chrome10-25,Safari5.1-6 */
-.banner-section {background:linear-gradient(to bottom, #ecdf55 0%,#82c99f 100%);} /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
 /* .banner filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecdf55', endColorstr='#82c99f',GradientType=0 ); IE6-9 */
 
 /*--- Bootstrap Tabs ---*/

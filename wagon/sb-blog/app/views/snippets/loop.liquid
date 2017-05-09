@@ -3,6 +3,7 @@
 {% else %}
    {% assign posts = contents.posts %}
 {% endif %}
+<div class="posts-list">
 {% for post in posts %}
     <article class="post clearfix">
       {% if post.featured_image.url %}
@@ -10,21 +11,33 @@
           <div class="img"
                style="background: url({{ post.featured_image.url | resize: '1920x1200' }});background-position: center center;background-repeat: no-repeat;background-size: cover;">
             <div class="overlay"></div>
-            <div class="col-xs-12 col-md-9">
-              <header class="post-header">
-                <h2 class="post-title"><a href="{{ locale }}/posts/{{ post._slug }}">{{ post.title | escape }}</a></h2>
-              </header>
-              <section class="post-excerpt">
-                <div class="teaser">{{ post.teaser }}</div> <p>{{ 'read_more' | translate }} <a class="read-more" href="{{url}}">&raquo;</a></p>
-              </section>
-            </div>
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12">
               <section class="post-meta">
                 {% if post.tags %}
                   <p class="tags">
-                    <a href="{{ locale }}/tags/{{ post.tags | first | escape | downcase }}">{{ post.tags | first | escape }}</a>
+                    <a class="tag" href="{{ locale }}/tags/{{ post.tags | first | escape | downcase }}">{{ post.tags | first | escape }}</a>
                   </p>
                 {% endif %}
+              </section>
+            </div>
+            <div class="article-info col-xs-12">
+              <header class="post-header">
+                <span class="post-title">
+                {% link_to post %}
+                    {{ post.title | escape }}
+                {% endlink_to %}
+                </span>
+              </header>
+              <section class="post-excerpt">
+                <div class="teaser">
+                    {% link_to post %}
+                        {% if post.teaser %}
+                            {{ post.teaser |  truncatewords: 30 }}
+                        {% else %}
+                            {{ post.body | truncatewords: 30 }}
+                        {% endif %}
+                    {% endlink_to %}
+                </div>
               </section>
             </div>
           </div>
@@ -40,3 +53,4 @@
       <hr/>
     </article>
 {% endfor %}
+</div>

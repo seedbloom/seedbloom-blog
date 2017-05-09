@@ -15,7 +15,7 @@ content_type: posts
         <div class="col-md-8">
           <section class="post-meta">
             {% for tag in post.tags %}
-              <a href="/{{ locale }}/tags/{{ tag | escape | downcase }}">{{ tag | escape }}</a>
+              <a class="tag" href="/{{ locale }}/tags/{{ tag | escape | downcase }}">{{ tag | escape }}</a>
             {% endfor %}
             <h1 class="post-title">{{ post.title}}</h1>
           </section>
@@ -23,7 +23,9 @@ content_type: posts
             {{#if image}}
               <section class="author">
                 <figure class="author-image">
-                  <a href="{{ locale }}/authors/{{ post.author.slug }}"><img class="img-responsive" src="{{ post.author.gravatar | resize: '58x75' }}"/></a>
+                  {% link_to post.author %}
+                    <img class="img-responsive" src="{{ post.author.gravatar | resize: '58x75' }}"/>
+                  {% endlink_to %}
                 </figure>
                 <section class="name-date">
                   <span class="name">{{post.author.name}}</span><br/>

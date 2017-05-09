@@ -20,7 +20,7 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
   # Debug mode disables concatenation and preprocessing of assets.
-  # This option may cause significant delays in view rendering with a large
+  # This option may cause s ignificant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
 
@@ -35,4 +35,5 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.header_url = ENV['DEFAULT_HEADER_URL']
 end

@@ -20,3 +20,10 @@ http://localhost:4002:
   handle: fluttering-aurora-5898
   email: victor@matekole.com
   api_key: d8e213f937d6e0624e3fdb0f32e939a104cc8be5
+
+https://devblog.seedbloom.it:
+  host: devblog.seedbloom.it:443
+  handle: seedbloom-blog
+  email: victor@seedbloom.it
+  api_key: 98629a89bba9d51875e810c5e42a460bf1bcaf7f
+  ssl: true

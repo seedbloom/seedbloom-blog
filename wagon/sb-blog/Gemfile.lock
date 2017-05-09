@@ -1,5 +1,5 @@
 PATH
-  remote: liquid_extensions
+  remote: ../../liquid_extensions
   specs:
     locomotivecms_liquid_extensions (1.2.0)
       locomotivecms-solid (~> 4.0.1)

@@ -1,5 +1,22 @@
 @import "global_vars";
-body, p {
+
+body {
+  font-family: 'Roboto Slab', serif;
+  /*letter-spacing: 1px;*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: $default-text-color;
+  letter-spacing: 0.4px;
+}
+
+header.nav, footer {
   font-family: 'Roboto', sans-serif;
   /*letter-spacing: 1px;*/
   -webkit-font-smoothing: antialiased;
@@ -15,56 +32,104 @@ body, p {
   letter-spacing: 0.4px;
 }
 
+// Fonts
+$Roboto: 'Roboto', sans-serif;
+$RobotoSlab: 'Roboto Slab', serif;
+$title-padding: 0 0 12px;
+
 h1 {
-  font-weight: 300;
-  font-size: 30px;
-  color: $default-text-color;
+  font-family: $Roboto;
+  font-weight: 400;
+  font-size: 40px;
   letter-spacing: 0.4px;
   margin: 0;
 }
 
 h2 {
-  font-size: 22px;
-  font-weight: 300;
-  margin: 0;
+  font-family: $Roboto;
+  font-size: 30px;
+  line-height: 32px;
+  font-weight: 500;
+  padding: $title-padding;
 }
 
 h3 {
-  font-size: 18px;
-  font-style: italic;
-  margin: 0;
+  font-family: $Roboto;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  padding: $title-padding;
 }
 
 h4 {
-  font-size: 16px;
-  margin: 0;
+  font-family: $Roboto;
+  font-size: 20px;
+  color: #6B6B6B;
+  padding: $title-padding;
 }
 
 h5 {
+  font-family: $Roboto;
   font-size: 14px;
   margin: 0;
 }
 
 h6 {
+  font-family: $Roboto;
   font-size: 12px;
   margin: 0;
 }
 
-p {
-  line-height: 1.4;
+@media (max-width: $screen-sm) {
+  h1 {
+    font-size: 30px;
+  }
 }
-
 
 a {
   color: $default-text-color;
   text-decoration:none;
+  padding-bottom: 6px;
   outline: 0 !important;
-  border: 0;
 }
 
 a:hover {
-  color: $default-text-color;
-  text-decoration: none;
-  border: 0;
   color: $neon-blue !important;
+  border-bottom-color:  $neon-blue;
+}
+
+// Icons
+
+@font-face {
+  font-family: 'seedbloom';
+  src: url('../fonts/seedbloom.eot?786');
+  src: url('../fonts/seedbloom.eot?78678h#iefix') format('embedded-opentype'),
+  url('../fonts/seedbloom.ttf?8768hghj') format('truetype'),
+  url('../fonts/seedbloom.woff?lkjk78') format('woff'),
+  url('../fonts/seedbloom.svg?m78678#seedbloom') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'seedbloom' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-burger:before {
+  content: "\e922";
+}
+
+.icon-close:before {
+  content: "\e923";
 }
