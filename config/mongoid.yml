@@ -138,6 +138,6 @@ production:
     default:
       database: sb_blog_production
       hosts:
-        - localhost:27017
+        - <%= ENV['MONGO_URL'] %>
       options:
         max_pool_size: 1
